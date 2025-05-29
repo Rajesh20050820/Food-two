@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aapki Rasoi - Premium Gourmet Kitchen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-navy text-white font-montserrat">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-navy/80 backdrop-blur-md shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-playfair font-bold text-gold">Aapki Rasoi</h1>
+      <nav class="flex items-center space-x-6">
+        <a href="#menu" class="text-lg hover:text-gold transition">Menu</a>
+        <a href="cart.html" class="text-lg hover:text-gold transition">Cart <i class="fas fa-shopping-cart"></i> <span id="cart-counter" class="text-sm bg-gold text-navy rounded-full px-2 py-1">0</span></a>
+        <button id="theme-toggle" class="text-2xl hover:text-gold transition" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero relative h-screen flex items-center justify-center text-center">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=90')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/70 to-navy/90"></div>
+    <div class="relative z-10 animate-hero-content">
+      <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 text-white drop-shadow-xl">A Culinary Journey Awaits</h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">Experience gourmet Indian cuisine crafted with passion, delivered with elegance.</p>
+      <a href="#menu" class="mt-8 inline-block px-10 py-4 bg-gold text-navy rounded-full text-lg font-semibold hover:bg-white hover:text-navy transition transform hover:scale-105 shadow-lg">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- Featured Items Carousel -->
+  <section class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-playfair font-bold text-gold mb-6">Featured Delights</h2>
+    <div id="featured-carousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4"></div>
+  </section>
+
+  <!-- Order Counter & Delivery Time -->
+  <section class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center bg-navy/50 backdrop-blur-md rounded-2xl shadow-lg">
+    <p class="text-lg text-gray-200">Orders placed today: <span id="order-counter" class="text-gold font-bold">0</span></p>
+    <p class="text-lg text-gray-200">Est. Delivery Time: <span class="text-gold font-bold">30-40 mins</span></p>
+    <p class="text-lg text-gray-200">Loyalty Points: <span id="loyalty-points" class="text-gold font-bold">0</span></p>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="container mx-auto px-4 py-12">
+    <div class="search-filter flex flex-col md:flex-row gap-4 mb-8 bg-navy/50 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+      <div class="relative flex-1">
+        <input type="text" id="search" placeholder="Search dishes..." class="w-full p-4 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-gold transition" aria-label="Search menu">
+        <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+      </div>
+      <div id="filter-buttons" class="flex gap-3 overflow-x-auto"></div>
+    </div>
+    <div id="menu-container" class="space-y-12"></div>
+  </section>
+
+  <!-- Cart Toggle -->
+  <button class="cart-toggle fixed bottom-8 right-8 bg-gold text-navy p-5 rounded-full shadow-2xl hover:bg-white transition transform hover:scale-110" onclick="window.location.href='cart.html'" aria-label="View cart">
+    <i class="fas fa-shopping-cart text-xl"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
